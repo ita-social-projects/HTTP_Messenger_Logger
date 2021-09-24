@@ -1,0 +1,11 @@
+{
+	"LOGS":[
+		{
+ 			"type":"LOG",
+			"time":"09-09-2021 05:54:16",
+			"file":"temp.cpp",
+			"function":"void DATABASE_CLASS_EXAMPLE::lol()",
+			"message":"SAAAAAAAAA HAHAHAHAHA"
+		}
+	]
+}
