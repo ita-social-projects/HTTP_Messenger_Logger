@@ -17,16 +17,7 @@ enum TYPE_OF_LOG{
     t_FATAL = 4,
 };
 
-// !
-const std::string SERIALIZED_LOG_TEMPLATE = (std::string)
-        "\t\t{\n " +
-            "\t\t\t\"type\":\"PLACE_FOR_TYPE\",\n" +
-            "\t\t\t\"time\":\"PLACE_FOR_TIME\",\n" +
-            "\t\t\t\"file\":\"PLACE_FOR_FILE\",\n" +
-            "\t\t\t\"function\":\"PLACE_FOR_FUNCTION\",\n" +
-            "\t\t\t\"message\":\"PLACE_FOR_MESSAGE\"\n" +
-        "\t\t}";
-// !
+
 
 class Log{
 private:

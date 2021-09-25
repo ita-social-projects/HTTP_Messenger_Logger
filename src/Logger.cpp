@@ -4,9 +4,10 @@
 #include <ios>
 #include "Logger.h"
 
+
 #ifdef _WIN32
 #include <conio.h>
-#include <dir.h>
+//#include <dir.h>
 #include <process.h>
 #endif
 
@@ -60,13 +61,7 @@ std::mutex Logger::m_mutex;
 
 
     Logger::Logger(){
-
-        #ifdef _WIN32
-                char* dirname =  "../logs";
-                mkdir(dirname);
-        #endif
-
-        m_file_for_saving_logs = (std::string)("logs/log1.json");
+        m_file_for_saving_logs = (std::string)("log1.json");
     }
 
     Logger::~Logger(){
