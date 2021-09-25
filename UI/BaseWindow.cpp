@@ -23,12 +23,10 @@ BaseWindow::~BaseWindow()
 
 QString BaseWindow::GetNewFilePath()
 {
-    QString path = QFileDialog::getOpenFileName(this, "Give me your file!", NULL,  "json file (*.json);;ALL files (*)");
-    if(!path.contains(".json")){
+    QString path = QFileDialog::getOpenFileName(this, "Give me your file!", NULL,  "txt file (*.txt);;ALL files (*)");
+    if(!path.contains(".txt")){
         QMessageBox messageBox;
-        messageBox.warning(0,"Error","You didnt choose .json file.. sorry, we can't read your thoughts");
-        messageBox.setStyleSheet("background-color: black; color: white;");
-        messageBox.setFixedSize(500,200);
+        messageBox.warning(0,"Error","You didnt choose file.. sorry, we can't read your thoughts");
         return "";
     }
     return path;

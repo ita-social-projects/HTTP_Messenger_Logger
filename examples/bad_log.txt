@@ -1,0 +1,4 @@
+ERROR   Sep_Sat_25_02:41PM    try1.cpp    static void DATABASE_CLASS_EXAMPLE::foo()    just one error..    
+FATAL   Sep_Sat_25_02:41PM    ../examples/te mp.cpp    static int DATABASE_CLASS_EXAMPLE::foo()    OOO fatality(    
+VERBOS    Sep_Sat_25_02:41PM    ../files/te mp.cpp    static void DATABASE_CLASS_EXAMPLE::foo()    oopss     
+DEBUG   Sep_Sat_25_02:41PM    te mp.cpp    void DATABASE_CLASS_EXAMPLE::just_function()    yeah.. debug    

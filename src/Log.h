@@ -17,7 +17,21 @@ enum TYPE_OF_LOG{
     t_FATAL = 4,
 };
 
+#define INDENT "  "
+#define INDENT_SIZE 2
 
+#define SERIALIZED_LOG_TEMPLATE (std::string) \
+    "PLACE_FOR_TYPE" + INDENT + \
+    "PLACE_FOR_TIME" + INDENT + \
+    "PLACE_FOR_FILE" + INDENT + \
+    "PLACE_FOR_FUNCTION" + INDENT + \
+    "PLACE_FOR_MESSAGE" + INDENT \
+
+static const int BUFFER_FOR_TYPE = 7;
+static const int BUFFER_FOR_TIME = 17;
+static const int BUFFER_FOR_FILE = 20;
+static const int BUFFER_FOR_FUNCTION = 50;
+static const int BUFFER_FOR_MESSAGE = 60;
 
 class Log{
 private:

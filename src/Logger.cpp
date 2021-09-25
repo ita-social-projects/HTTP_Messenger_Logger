@@ -10,6 +10,7 @@
 //#include <dir.h>
 #include <process.h>
 #endif
+#define TIME_FORMAT "%b_%a_%d_%H:%M"
 
 std::shared_ptr<Logger> Logger::LOGGER = nullptr;
 std::mutex Logger::m_mutex;
@@ -26,42 +27,22 @@ std::mutex Logger::m_mutex;
         m_level = new_level;
     }
 
-    void Logger::GoToTheEndOfFile(std::fstream& file){
-        std::string line;
-        std::streampos oldpos = file.tellg();
-
-        while(std::getline(file, line)) {
-            if(line.find("]") != std::string::npos){
-                file.seekg(oldpos); 
-                return;
-            }
-                
-            oldpos = file.tellg();
-        }
-    }
-
     void Logger::WriteLogsToFile(){
         if(m_level == t_WRONG_TYPE || m_all_logs.size() == 0){
             return;
         }
         std::ofstream file;
         file.open(m_file_for_saving_logs);
-        file << "{\n\t\"LOGS\":[\n";
         while(!m_all_logs.empty()){
-            file << m_all_logs.top().Serialize();
+            file << m_all_logs.top().Serialize() << "\n";
             m_all_logs.pop();
-            if(!m_all_logs.empty()){
-                file << ",";
-            }
-            file << "\n";
         }
-        file << "\t]\n}";
         file.close();
     }
 
 
     Logger::Logger(){
-        m_file_for_saving_logs = (std::string)("log1.json");
+        m_file_for_saving_logs = (std::string)("log") + GetCurrentTime() + (".txt");
     }
 
     Logger::~Logger(){
@@ -84,7 +65,7 @@ std::mutex Logger::m_mutex;
         time (&rawtime);
         timeinfo = localtime(&rawtime);
 
-        strftime(buffer,sizeof(buffer),"%d-%m-%Y %H:%M:%S",timeinfo);
+        strftime(buffer,sizeof(buffer),TIME_FORMAT,timeinfo);
         std::string current_time(buffer);
 
         return current_time;

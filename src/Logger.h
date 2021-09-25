@@ -31,8 +31,6 @@ private:
     // contains the lowest type_of_logs that can be contained in logger
     TYPE_OF_LOG m_level = t_DEBUG;
 
-    // needed for opening file on correct line
-    void GoToTheEndOfFile(std::fstream& file);
     // saving logs to file
     void WriteLogsToFile();
     std::string GetCurrentTime();
@@ -46,7 +44,7 @@ private:
     Logger& operator=(const Logger&);
 
 public:      
-    ~Logger(); 	 
+    ~Logger();   
     void SetLogLevel(TYPE_OF_LOG new_level);
     Logger& operator()( TYPE_OF_LOG type, 
                         std::string file, 

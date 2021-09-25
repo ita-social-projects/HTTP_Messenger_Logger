@@ -8,11 +8,10 @@
 #include <vector>
 #include <fstream>
 #include <stdexcept>
+#include <algorithm>
 
 #include "../src/Log.h"
 
-#define begin_of_log   "{"
-#define end_of_log     "}"
 
 class DeSerializer{
     private:
@@ -23,19 +22,18 @@ class DeSerializer{
         void ScanLines();
         void PushLogs();
         void CreateLogFromLine(std::string& line);
-        std::string GetProperty(std::string line, std::string searched_property);        
-        void DeleteAllLogs();
+        std::string GetNextProperty(std::string& line, int size_of_buffer_for_property);        
+        std::string DeleteAllSpacesFromEndOfLine(std::string line);
+
         void DeleteAllLines();
         void GetLogsFromJson();
     public:
         DeSerializer(std::string path);
-        //:m_file_with_logs(path){};
         
         void SetPath(std::string path_in);
         std::vector<Log> GetAllLogs();
-        
 
-        void DeleteAllInfo();
+        void DeleteAllLogs();
 };
 
 #endif

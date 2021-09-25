@@ -2,26 +2,13 @@
 #include <string>
 
 
-// !
-#define SERIALIZED_LOG_TEMPLATE (std::string)\
-        "\t\t{\n " +\
-            "\t\t\t\"type\":\"PLACE_FOR_TYPE\",\n" + \
-            "\t\t\t\"time\":\"PLACE_FOR_TIME\",\n" + \
-            "\t\t\t\"file\":\"PLACE_FOR_FILE\",\n" + \
-            "\t\t\t\"function\":\"PLACE_FOR_FUNCTION\",\n" + \
-            "\t\t\t\"message\":\"PLACE_FOR_MESSAGE\"\n" + \
-        "\t\t}" \
-// !
-
-std::string Log::Replace_In_String(std::string& s, const std::string& toReplace, const std::string& replaceWith){
-    std::size_t pos = s.find(toReplace);
-    if (pos == std::string::npos){
-        return s;
-    } 
-
-    return s.replace(pos, toReplace.length(), replaceWith);
-}
-
+        std::string Log::Replace_In_String(std::string &s, const std::string &toReplace, const std::string &replaceWith) {
+            std::size_t pos = s.find(toReplace);
+            if (pos == std::string::npos) {
+                return s;
+            }
+            return s.replace(pos, toReplace.length(), replaceWith);
+        }
 
         Log::Log(TYPE_OF_LOG type_in,
             std::string time_in,
@@ -46,11 +33,23 @@ std::string Log::Replace_In_String(std::string& s, const std::string& toReplace,
 
         std::string Log::Serialize(){
             std::string serialized_log = SERIALIZED_LOG_TEMPLATE;
-            Replace_In_String(serialized_log, "PLACE_FOR_TYPE", TypeToString(m_type));
-            Replace_In_String(serialized_log, "PLACE_FOR_TIME", m_time);
-            Replace_In_String(serialized_log, "PLACE_FOR_FILE", m_file);           
-            Replace_In_String(serialized_log, "PLACE_FOR_FUNCTION", m_function); 
-            Replace_In_String(serialized_log, "PLACE_FOR_MESSAGE", m_message);
+
+            std::string type = TypeToString(m_type);
+            type.resize(BUFFER_FOR_TYPE, ' ');
+            std::string time = m_time;
+            time.resize(BUFFER_FOR_TIME, ' ');
+            std::string file = m_file;
+            file.resize(BUFFER_FOR_FILE, ' ');
+            std::string function = m_function;
+            function.resize(BUFFER_FOR_FUNCTION, ' ');
+            std::string message = m_message;
+            message.resize(BUFFER_FOR_MESSAGE, ' ');
+
+            Replace_In_String(serialized_log, "PLACE_FOR_TYPE", type);
+            Replace_In_String(serialized_log, "PLACE_FOR_TIME", time);
+            Replace_In_String(serialized_log, "PLACE_FOR_FILE", file);           
+            Replace_In_String(serialized_log, "PLACE_FOR_FUNCTION", function); 
+            Replace_In_String(serialized_log, "PLACE_FOR_MESSAGE", message);
             return serialized_log;
         }
         std::string Log::TypeToString(TYPE_OF_LOG type){

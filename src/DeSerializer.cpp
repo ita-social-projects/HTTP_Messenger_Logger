@@ -1,5 +1,6 @@
 #pragma once
 
+#include <string>
 #ifndef DESERIALIZER_CPP_INCLUDED
 #define DESERIALIZER_CPP_INCLUDED
 #include "DeSerializer.h"
@@ -9,24 +10,11 @@
         };
 
         void DeSerializer::ScanLines(){
-            std::string temp_line;
             std::string line;
-            bool logStarted = false;
             std::fstream file;
             file.open(m_file_with_logs);
-            while(std::getline(file, temp_line)){
-                if(temp_line.find(begin_of_log) != std::string::npos){
-                    logStarted = true;
-                }
-                if(temp_line.find(end_of_log) != std::string::npos){
-                    logStarted = false;
-                    m_all_lines.push_back(line);
-                    line = "";  
-                    continue;
-                }
-                if(logStarted){
-                    line += temp_line;                   
-                }
+            while(std::getline(file, line)){
+                m_all_lines.push_back(line);
             }
         }
 
@@ -37,30 +25,27 @@
         }
 
         void DeSerializer::CreateLogFromLine(std::string& line){
-            std::string type;
-            std::string time;
-            std::string file;
-            std::string function;
-            std::string message;
-            try{
-                type = GetProperty(line, "\"type\":\"");
-                time = GetProperty(line, "\"time\":\"");
-                file = GetProperty(line, "\"file\":\"");        
-                function = GetProperty(line, "\"function\":\"");   
-                message = GetProperty(line, "\"message\":\"");     
-            }catch(std::exception& ex){
-                return;
-            }
+            std::string type = GetNextProperty(line, BUFFER_FOR_TYPE);
+            std::string time = GetNextProperty(line, BUFFER_FOR_TIME);
+            std::string file = GetNextProperty(line, BUFFER_FOR_FILE);  
+            std::string function = GetNextProperty(line, BUFFER_FOR_FUNCTION);   
+            std::string message = GetNextProperty(line, BUFFER_FOR_MESSAGE);     
+
             m_all_logs.push_back(Log(type, time, file, function, message));
         }
-        std::string DeSerializer::GetProperty(std::string line, std::string searched_property){
-            int properity_begin = line.find(searched_property);
-            if(properity_begin == std::string::npos){
-                throw std::invalid_argument("cant find properity in string");
-            }
-            line = line.substr(properity_begin + searched_property.length());
-            line = line.substr(0, line.find('\"'));
 
+        std::string DeSerializer::GetNextProperty(std::string& line, int size_of_buffer_for_property){
+            // getting the result from where its supposed to be
+            std::string result = line.substr(0, size_of_buffer_for_property);
+            // deleting this part from the line
+            line = line.substr(INDENT_SIZE + size_of_buffer_for_property, line.size());
+            result = DeleteAllSpacesFromEndOfLine(result);
+            return result;
+        }
+
+        std::string DeSerializer::DeleteAllSpacesFromEndOfLine(std::string line){
+            line.erase(std::find_if(line.rbegin(), line.rend(),
+                    std::not1(std::ptr_fun<int, int>(std::isspace))).base(), line.end());
             return line;
         }
 
@@ -83,7 +68,7 @@
             for(int i=0; i<amount_of_logs; i++){
                 m_all_logs.pop_back();
             }
-
+            DeleteAllLines();
         }
 
         void DeSerializer::DeleteAllLines(){
@@ -91,9 +76,5 @@
             for(int i=0; i<amount_of_lines; i++){
                 m_all_lines.pop_back();
             }
-        }
-        void DeSerializer::DeleteAllInfo(){
-            DeleteAllLogs();
-            DeleteAllLines();
         }
 #endif

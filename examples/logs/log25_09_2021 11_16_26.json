@@ -1,0 +1,32 @@
+{
+	"LOGS":[
+		{
+ 			"type":"ERROR",
+			"time":"25_09_2021 11_16_26",
+			"file":"temp.cpp",
+			"function":"static void DATABASE_CLASS_EXAMPLE::foo()",
+			"message":"just one error.."
+		},
+		{
+ 			"type":"FATAL",
+			"time":"25_09_2021 11_16_26",
+			"file":"temp.cpp",
+			"function":"static void DATABASE_CLASS_EXAMPLE::foo()",
+			"message":"OOO fatality("
+		},
+		{
+ 			"type":"VERBOSE",
+			"time":"25_09_2021 11_16_26",
+			"file":"temp.cpp",
+			"function":"static void DATABASE_CLASS_EXAMPLE::foo()",
+			"message":"oopss "
+		},
+		{
+ 			"type":"DEBUG",
+			"time":"25_09_2021 11_16_26",
+			"file":"temp.cpp",
+			"function":"static void DATABASE_CLASS_EXAMPLE::foo()",
+			"message":"yeah.. debug"
+		}
+	]
+}

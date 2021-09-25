@@ -1,0 +1,1 @@
+FATAL     25_09_2021 11_16_26     temp.cpp   "static void DATABASE_CLASS_EXAMPLE::foo()"    OOO fatality(

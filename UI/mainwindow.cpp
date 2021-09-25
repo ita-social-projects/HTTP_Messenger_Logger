@@ -84,7 +84,7 @@ void MainWindow::on_open_new_file_Button_clicked()
     if(file == ""){
         return;
     }
-    de->DeleteAllInfo();
+    de->DeleteAllLogs();
     ProcessNewFile(file);
 }
 
