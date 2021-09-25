@@ -13,6 +13,10 @@
 
 #include "Log.h"
 
+#if !defined(__PRETTY_FUNCTION__) && !defined(__GNUC__)
+#define __PRETTY_FUNCTION__ __FUNCSIG__
+#endif
+
 #define DEBUG(X)    (*Logger::GetInstance())(t_DEBUG,      __FILE__, __PRETTY_FUNCTION__, X)
 #define ERROR(X)    (*Logger::GetInstance())(t_ERROR,      __FILE__, __PRETTY_FUNCTION__, X)
 #define FATAL(X)    (*Logger::GetInstance())(t_FATAL,      __FILE__, __PRETTY_FUNCTION__, X)

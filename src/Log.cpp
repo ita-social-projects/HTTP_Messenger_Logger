@@ -2,11 +2,23 @@
 #include <string>
 
 
+// !
+#define SERIALIZED_LOG_TEMPLATE (std::string)\
+        "\t\t{\n " +\
+            "\t\t\t\"type\":\"PLACE_FOR_TYPE\",\n" + \
+            "\t\t\t\"time\":\"PLACE_FOR_TIME\",\n" + \
+            "\t\t\t\"file\":\"PLACE_FOR_FILE\",\n" + \
+            "\t\t\t\"function\":\"PLACE_FOR_FUNCTION\",\n" + \
+            "\t\t\t\"message\":\"PLACE_FOR_MESSAGE\"\n" + \
+        "\t\t}" \
+// !
+
 std::string Log::Replace_In_String(std::string& s, const std::string& toReplace, const std::string& replaceWith){
     std::size_t pos = s.find(toReplace);
     if (pos == std::string::npos){
         return s;
     } 
+
     return s.replace(pos, toReplace.length(), replaceWith);
 }
 
@@ -33,7 +45,7 @@ std::string Log::Replace_In_String(std::string& s, const std::string& toReplace,
                 m_message(message_in){};
 
         std::string Log::Serialize(){
-            std::string serialized_log = SERIALIZED_LOG_TEMPLATE; 
+            std::string serialized_log = SERIALIZED_LOG_TEMPLATE;
             Replace_In_String(serialized_log, "PLACE_FOR_TYPE", TypeToString(m_type));
             Replace_In_String(serialized_log, "PLACE_FOR_TIME", m_time);
             Replace_In_String(serialized_log, "PLACE_FOR_FILE", m_file);           
