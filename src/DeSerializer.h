@@ -26,7 +26,7 @@ class DeSerializer{
         std::string DeleteAllSpacesFromEndOfLine(std::string line);
 
         void DeleteAllLines();
-        void GetLogsFromJson();
+        void GetLogsFromFile();
     public:
         DeSerializer(std::string path);
         

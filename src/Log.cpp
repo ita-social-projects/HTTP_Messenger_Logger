@@ -85,7 +85,7 @@
             if(type=="DEBUG"){
                 return t_DEBUG;
             }
-            return t_WRONG_TYPE;
+            return t_NO_TYPE;
         }
 
 

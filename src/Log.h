@@ -9,7 +9,7 @@
 #include <map>
 
 enum TYPE_OF_LOG{
-    t_WRONG_TYPE = -1,
+    t_NO_TYPE = -1,
 
     t_DEBUG = 1,
     t_VERBOSE = 2,

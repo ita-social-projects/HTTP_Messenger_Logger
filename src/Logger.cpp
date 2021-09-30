@@ -4,13 +4,7 @@
 #include <ios>
 #include "Logger.h"
 
-
-#ifdef _WIN32
-#include <conio.h>
-//#include <dir.h>
-#include <process.h>
-#endif
-#define TIME_FORMAT "%b_%a_%d_%H:%M"
+#define TIME_FORMAT "%H:%M_%d-%m-%Y"
 
 std::shared_ptr<Logger> Logger::LOGGER = nullptr;
 std::mutex Logger::m_mutex;
@@ -28,7 +22,7 @@ std::mutex Logger::m_mutex;
     }
 
     void Logger::WriteLogsToFile(){
-        if(m_level == t_WRONG_TYPE || m_all_logs.size() == 0){
+        if(m_level == t_NO_TYPE || m_all_logs.size() == 0){
             return;
         }
         std::ofstream file;
@@ -42,7 +36,7 @@ std::mutex Logger::m_mutex;
 
 
     Logger::Logger(){
-        m_file_for_saving_logs = (std::string)("log") + GetCurrentTime() + (".txt");
+        m_file_for_saving_logs = (std::string)("log_") + GetCurrentTime() + (".txt");
     }
 
     Logger::~Logger(){
@@ -52,7 +46,11 @@ std::mutex Logger::m_mutex;
     Logger& Logger::operator()(TYPE_OF_LOG type, std::string file, std::string function, std::string message){
         std::lock_guard<std::mutex> lock(m_mutex);
         if(type >= m_level){
-            m_all_logs.push(Log(type, GetCurrentTime(), file, function, message));
+            Log log(type, GetCurrentTime(), file, function, message);
+            // !
+            std::cout << log.Serialize() << std::endl;
+            // !
+            m_all_logs.push(log);
         }
         return *this;
     }

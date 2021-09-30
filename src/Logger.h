@@ -14,7 +14,7 @@
 #include "Log.h"
 
 #if !defined(__PRETTY_FUNCTION__) && !defined(__GNUC__)
-#define __PRETTY_FUNCTION__ __FUNCSIG__
+    #define __PRETTY_FUNCTION__ __FUNCSIG__
 #endif
 
 #define DEBUG(X)    (*Logger::GetInstance())(t_DEBUG,      __FILE__, __PRETTY_FUNCTION__, X)
@@ -31,10 +31,8 @@ private:
     // contains the lowest type_of_logs that can be contained in logger
     TYPE_OF_LOG m_level = t_DEBUG;
 
-    // saving logs to file
     void WriteLogsToFile();
     std::string GetCurrentTime();
-
 
     static std::shared_ptr<Logger> LOGGER;  
     static std::mutex m_mutex;

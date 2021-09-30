@@ -139,8 +139,7 @@ void MainWindow::on_tableWidget_cellDoubleClicked()
 }
 
 void MainWindow::FilterTableByColumn(int column, QString filter_text){
-    for( int i = 0; i < ui->tableWidget->rowCount(); ++i )
-    {
+    for( int i = 0; i < ui->tableWidget->rowCount(); ++i ){
         if(QString::compare(ui->tableWidget->item( i, column )->text(), filter_text , Qt::CaseInsensitive) != 0){
             ui->tableWidget->setRowHidden( i, true );
         }
@@ -155,16 +154,6 @@ void MainWindow::on_tableWidget_itemClicked(QTableWidgetItem *item)
 
 void MainWindow::resizeEvent(QResizeEvent* event)
 {
-
-    int used_width = 0;
-    ui->tableWidget->setColumnWidth(0, 595/8);
-    used_width += 595/8;
-
-    ui->tableWidget->setColumnWidth(1, 595/4);
-    used_width += 595/4;
-    ui->tableWidget->setColumnWidth(2, 595/6);
-    used_width += 595/6;
-    ui->tableWidget->setColumnWidth(3, ui->tableWidget->width()/2.5);
-    used_width += ui->tableWidget->width()/2.5;
-    ui->tableWidget->setColumnWidth(4, ui->tableWidget->width() - used_width - 40);
+    ui->tableWidget->horizontalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
+    ui->tableWidget->horizontalHeader()->setStretchLastSection(true);
 }

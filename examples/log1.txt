@@ -1,4 +1,0 @@
-ERROR    Sep_Sat_25_15:18   te mp.cpp             static void DATABASE_CLASS_EXAMPLE::foo()           just one error..                                              
-FATAL    Sep_Sat_25_15:18   te mp.cpp             static void DATABASE_CLASS_EXAMPLE::foo()           OOO fatality(                                                 
-VERBOSE  Sep_Sat_25_15:18   te mp.cpp             static void DATABASE_CLASS_EXAMPLE::foo()           oopss                                                         
-DEBUG    Sep_Sat_25_15:18   te mp.cpp             static void DATABASE_CLASS_EXAMPLE::foo()           yeah.. debug                                                  

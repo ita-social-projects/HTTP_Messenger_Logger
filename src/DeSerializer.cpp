@@ -1,12 +1,10 @@
-#pragma once
-
 #include <string>
 #ifndef DESERIALIZER_CPP_INCLUDED
 #define DESERIALIZER_CPP_INCLUDED
 #include "DeSerializer.h"
 
         DeSerializer::DeSerializer(std::string path):m_file_with_logs(path){
-            GetLogsFromJson();
+            GetLogsFromFile();
         };
 
         void DeSerializer::ScanLines(){
@@ -52,7 +50,7 @@
         std::vector<Log> DeSerializer::GetAllLogs(){
             return m_all_logs;
         }
-        void DeSerializer::GetLogsFromJson(){
+        void DeSerializer::GetLogsFromFile(){
             ScanLines();
             PushLogs();
             DeleteAllLines();
@@ -60,7 +58,7 @@
 
         void DeSerializer::SetPath(std::string path_in){
             m_file_with_logs = path_in;
-            GetLogsFromJson();
+            GetLogsFromFile();
         }
 
         void DeSerializer::DeleteAllLogs(){
