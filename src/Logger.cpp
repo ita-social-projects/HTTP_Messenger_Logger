@@ -2,9 +2,9 @@
 #include <fstream>
 #include <string>
 #include <ios>
-#include "Logger.h"
+#include "../include/Logger.h"
 
-#define TIME_FORMAT "%H:%M_%d-%m-%Y"
+#define TIME_FORMAT "%Y-%m-%d_%H-%M"
 
 std::mutex Logger::m_mutex;
 

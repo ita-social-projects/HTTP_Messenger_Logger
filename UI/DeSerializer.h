@@ -10,7 +10,7 @@
 #include <stdexcept>
 #include <algorithm>
 
-#include "../src/Log.h"
+#include "../include/Log.h"
 
 
 class DeSerializer{
