@@ -1,5 +1,4 @@
 #include <iostream>
-#include "../src/DeSerializer.cpp"
 #include "../src/Log.cpp"
 #include "example_class.cpp"
 
