@@ -27,11 +27,11 @@ enum TYPE_OF_LOG{
     "PLACE_FOR_FUNCTION" + INDENT + \
     "PLACE_FOR_MESSAGE" + INDENT \
 
-static const int BUFFER_FOR_TYPE = 7;
-static const int BUFFER_FOR_TIME = 17;
-static const int BUFFER_FOR_FILE = 20;
-static const int BUFFER_FOR_FUNCTION = 50;
-static const int BUFFER_FOR_MESSAGE = 60;
+const int BUFFER_FOR_TYPE = 7;
+const int BUFFER_FOR_TIME = 17;
+const int BUFFER_FOR_FILE = 50;
+const int BUFFER_FOR_FUNCTION = 70;
+const int BUFFER_FOR_MESSAGE = 60;
 
 class Log{
 private:
