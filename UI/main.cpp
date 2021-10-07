@@ -6,8 +6,6 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
     try{
-
-
         WelcomeScreen w_screen;
         w_screen.show();
         a.exec();
