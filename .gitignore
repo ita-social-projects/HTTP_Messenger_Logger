@@ -44,3 +44,6 @@
 *.exe
 *.out
 *.app
+
+# ignore build libraries
+/build
