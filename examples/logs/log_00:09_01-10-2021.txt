@@ -1,3 +1,0 @@
-FATAL    00:19_01-10-2021   example_class.cpp     static int CLASS_EXAMPLE::another_function()        oh no! i dont know what to write in message                   
-ERROR    00:19_01-10-2021   example_class.cpp     void CLASS_EXAMPLE::function(int, int, std::string  😐                                                          
-DEBUG    00:19_01-10-2021   example_class.cpp     void CLASS_EXAMPLE::function(int, int, std::string  just test                                                     
