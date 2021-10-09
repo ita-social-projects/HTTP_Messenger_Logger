@@ -50,8 +50,57 @@
             Replace_In_String(serialized_log, "PLACE_FOR_FILE", file);           
             Replace_In_String(serialized_log, "PLACE_FOR_FUNCTION", function); 
             Replace_In_String(serialized_log, "PLACE_FOR_MESSAGE", message);
-            return serialized_log;
+            
+            return DeleteAllSpaces(serialized_log);
         }
+
+        std::string Log::DeleteAllSpaces(std::string line){
+            line.erase(std::find_if(line.rbegin(), line.rend(),
+                    std::not1(std::ptr_fun<int, int>(std::isspace))).base(), line.end());
+            return line;
+        }
+
+        void Log::PrintInConsole(){
+            #ifdef __linux__ 
+                switch (m_type) {
+                    case t_DEBUG:{
+                        std::cout << DEBUG_COLOR;
+                        std::cout << Serialize() << std::endl;
+                        std::cout << RESET_COLOR;   
+                    }
+                    break;
+                    case t_VERBOSE:{
+                        std::cout << VERBOSE_COLOR;
+                        std::cout << Serialize() << std::endl;
+                        std::cout << RESET_COLOR;   
+                    }
+                    break;
+
+                    case t_ERROR:{
+                        std::cout << ERROR_COLOR;
+                        std::cout << Serialize() << std::endl;
+                        std::cout << RESET_COLOR;   
+                    
+                    }
+                    break;
+                    case t_FATAL:{
+                        std::cout << FATAL_COLOR;
+                        std::cout << Serialize() << std::endl;
+                        std::cout << RESET_COLOR;   
+                    }
+                    break;
+
+                    default: {
+                        std::cout << Serialize() << std::endl;
+                    }
+                }
+            #elif _WIN32
+                std::cout << Serialize() << std::endl;
+            #else
+                std::cout << Serialize() << std::endl;
+            #endif
+        }
+
         std::string Log::TypeToString(TYPE_OF_LOG type){
             switch (type) {                
                 case t_VERBOSE:{
