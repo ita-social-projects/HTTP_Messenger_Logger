@@ -3,9 +3,6 @@ pipeline{
 
     environment{
         REPO_NAME = 'HTTP_Messenger_Logger'
-        // LIBRARY_PATH = 'C:\\Users\\akork\\Desktop\\HttpMessengerLogger\\vcpkg'
-        // DLL_PATH = "${LIBRARY_PATH}\\installed\\x64-windows\\debug\\bin\\cpprest_2_10d.dll"
-        
     }
 
     stages{
@@ -33,7 +30,7 @@ pipeline{
         success{
             script{
                 archiveArtifacts(
-                    artifacts: "/",
+                    artifacts: "/${env.REPO_NAME}/build/Debug/*.lib, /${env.REPO_NAME}/include/*.h",
                     fingerprint: true
                 )
             }
