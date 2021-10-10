@@ -20,10 +20,10 @@
     #define __PRETTY_FUNCTION__ __FUNCSIG__
 #endif
 
-#define DEBUG(X)    (Logger::GetInstance())(t_DEBUG,      __FILE__, __PRETTY_FUNCTION__, X)
-#define VERBOSE(X)  (Logger::GetInstance())(t_VERBOSE,    __FILE__, __PRETTY_FUNCTION__, X)
-#define ERROR(X)    (Logger::GetInstance())(t_ERROR,      __FILE__, __PRETTY_FUNCTION__, X)
-#define FATAL(X)    (Logger::GetInstance())(t_FATAL,      __FILE__, __PRETTY_FUNCTION__, X)
+#define LOG_DEBUG(X)    (Logger::GetInstance())(t_DEBUG,      __FILE__, __PRETTY_FUNCTION__, X)
+#define LOG_VERBOSE(X)  (Logger::GetInstance())(t_VERBOSE,    __FILE__, __PRETTY_FUNCTION__, X)
+#define LOG_ERROR(X)    (Logger::GetInstance())(t_ERROR,      __FILE__, __PRETTY_FUNCTION__, X)
+#define LOG_FATAL(X)    (Logger::GetInstance())(t_FATAL,      __FILE__, __PRETTY_FUNCTION__, X)
 
 #define SET_LOG_LEVEL(X) (Logger::GetInstance()).SetLogLevel(X)
 #define SET_LOGS_FILE(X) (Logger::GetInstance()).SetFileForLogs(X)
