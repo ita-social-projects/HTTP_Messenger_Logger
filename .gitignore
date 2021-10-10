@@ -47,4 +47,7 @@
 
 # ignore build libraries
 /build
+
+
 /examples
+/example
