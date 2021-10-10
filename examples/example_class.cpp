@@ -16,15 +16,10 @@ public:
         SHOW_LOGS_IN_CONSOLE(true);
 
         DEBUG("just test");
-        std::cin >> num;
         ERROR("😐");
-        std::cin >> num;
         VERBOSE("DEMO #2");
-        std::cin >> num;
         VERBOSE("lol");
-        std::cin >> num;
         VERBOSE("yeah");
-        std::cin >> num;
         another_function();
     }
 };

@@ -36,7 +36,7 @@ const int BUFFER_FOR_MESSAGE = 60;
 
 /* colors for linux */
 
-#ifdef __linux__
+#if defined(QT_VERSION) || defined(linux)
     #define RESET_COLOR         std::cout << "\033[0m"
 
     #define SET_VERBOSE_COLOR   std::cout << "\033[1m\033[36m" 
@@ -48,7 +48,7 @@ const int BUFFER_FOR_MESSAGE = 60;
     #define SET_ERROR_COLOR     SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_RED);
     #define SET_FATAL_COLOR     SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 79);
     #define SET_VERBOSE_COLOR   SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_GREEN | FOREGROUND_BLUE);
-    #define DEBUG_COLOR     SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 95);
+    #define DEBUG_COLOR         SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 95);
 
     #define RESET_COLOR         SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 15);
 #else
