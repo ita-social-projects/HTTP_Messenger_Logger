@@ -50,8 +50,42 @@
             Replace_In_String(serialized_log, "PLACE_FOR_FILE", file);           
             Replace_In_String(serialized_log, "PLACE_FOR_FUNCTION", function); 
             Replace_In_String(serialized_log, "PLACE_FOR_MESSAGE", message);
-            return serialized_log;
+            
+            return DeleteAllSpaces(serialized_log);
         }
+
+        std::string Log::DeleteAllSpaces(std::string line){
+            std::string WHITESPACE = " \n\r\t\f\v";
+            size_t end = line.find_last_not_of(WHITESPACE);
+            return (end == std::string::npos) ? "" : line.substr(0, end + 1);
+        }
+
+        void Log::PrintInConsole(){
+            switch (m_type) {
+                case t_DEBUG:{
+                    SET_DEBUG_COLOR;
+                }
+                break;
+                case t_VERBOSE:{
+                    SET_VERBOSE_COLOR;
+                }
+                break;
+                case t_ERROR:{
+                    SET_ERROR_COLOR;
+                }
+                break;
+                case t_FATAL:{
+                    SET_FATAL_COLOR;   
+                }
+                break;
+                default: { 
+                    RESET_COLOR;
+                }
+            }
+            std::cout << Serialize() << std::endl;
+            RESET_COLOR;   
+        }
+
         std::string Log::TypeToString(TYPE_OF_LOG type){
             switch (type) {                
                 case t_VERBOSE:{

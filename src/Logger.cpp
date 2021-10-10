@@ -4,7 +4,6 @@
 #include <ios>
 #include "../include/Logger.h"
 
-#define TIME_FORMAT "%Y-%m-%d_%H-%M"
 
 std::mutex Logger::m_mutex;
 
@@ -40,15 +39,16 @@ std::mutex Logger::m_mutex;
     }
 
     Logger& Logger::operator()(TYPE_OF_LOG type, std::string file, std::string function, std::string message){
-        std::lock_guard<std::mutex> lock(m_mutex);
+        std::unique_lock<std::mutex> lock(m_mutex);
         if(type >= m_level){
             Log log(type, GetCurrentTime(), file, function, message);
             if(show_logs_in_console){
-                std::cout << log.Serialize() << std::endl;
+                log.PrintInConsole();
             }
             m_all_logs.push(log);
         }
-        if(m_all_logs.size() == m_max_amount_of_logs){
+        lock.unlock();
+        if(m_all_logs.size() <= m_max_amount_of_logs){
             SaveLogsToFile();
         }
         return *this;
@@ -59,6 +59,9 @@ std::mutex Logger::m_mutex;
     }
     void Logger::SetShowInConsole(bool show){
         show_logs_in_console = show;
+    }
+    void Logger::SetMaxAmountOfLogs(size_t amount){
+        m_max_amount_of_logs = amount;
     }
 
     std::string Logger::GetCurrentTime(){
