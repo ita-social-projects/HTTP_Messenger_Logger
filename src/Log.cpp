@@ -61,44 +61,29 @@
         }
 
         void Log::PrintInConsole(){
-            #ifdef __linux__ 
-                switch (m_type) {
-                    case t_DEBUG:{
-                        std::cout << DEBUG_COLOR;
-                        std::cout << Serialize() << std::endl;
-                        std::cout << RESET_COLOR;   
-                    }
-                    break;
-                    case t_VERBOSE:{
-                        std::cout << VERBOSE_COLOR;
-                        std::cout << Serialize() << std::endl;
-                        std::cout << RESET_COLOR;   
-                    }
-                    break;
-
-                    case t_ERROR:{
-                        std::cout << ERROR_COLOR;
-                        std::cout << Serialize() << std::endl;
-                        std::cout << RESET_COLOR;   
-                    
-                    }
-                    break;
-                    case t_FATAL:{
-                        std::cout << FATAL_COLOR;
-                        std::cout << Serialize() << std::endl;
-                        std::cout << RESET_COLOR;   
-                    }
-                    break;
-
-                    default: {
-                        std::cout << Serialize() << std::endl;
-                    }
+            switch (m_type) {
+                case t_DEBUG:{
+                    SET_DEBUG_COLOR;
                 }
-            #elif _WIN32
-                std::cout << Serialize() << std::endl;
-            #else
-                std::cout << Serialize() << std::endl;
-            #endif
+                break;
+                case t_VERBOSE:{
+                    SET_VERBOSE_COLOR;
+                }
+                break;
+                case t_ERROR:{
+                    SET_ERROR_COLOR;
+                }
+                break;
+                case t_FATAL:{
+                    SET_FATAL_COLOR;   
+                }
+                break;
+                default: { 
+                    RESET_COLOR;
+                }
+            }
+            std::cout << Serialize() << std::endl;
+            RESET_COLOR;   
         }
 
         std::string Log::TypeToString(TYPE_OF_LOG type){

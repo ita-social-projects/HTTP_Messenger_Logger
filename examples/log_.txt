@@ -121,3 +121,15 @@ VERBOSE  2021-10-09_18-30   example_class.cpp                         void CLASS
 VERBOSE  2021-10-09_18-30   example_class.cpp                         void CLASS_EXAMPLE::function(int, int, std::string)                     lol
 VERBOSE  2021-10-09_18-30   example_class.cpp                         void CLASS_EXAMPLE::function(int, int, std::string)                     yeah
 FATAL    2021-10-09_18-30   example_class.cpp                         static int CLASS_EXAMPLE::another_function()                            oh no! i dont know what to write in message
+DEBUG    2021-10-10_17-27   example_class.cpp                         void CLASS_EXAMPLE::function(int, int, std::string)                     just test
+ERROR    2021-10-10_17-27   example_class.cpp                         void CLASS_EXAMPLE::function(int, int, std::string)                     😐
+VERBOSE  2021-10-10_17-27   example_class.cpp                         void CLASS_EXAMPLE::function(int, int, std::string)                     DEMO #2
+VERBOSE  2021-10-10_17-27   example_class.cpp                         void CLASS_EXAMPLE::function(int, int, std::string)                     lol
+VERBOSE  2021-10-10_17-27   example_class.cpp                         void CLASS_EXAMPLE::function(int, int, std::string)                     yeah
+FATAL    2021-10-10_17-27   example_class.cpp                         static int CLASS_EXAMPLE::another_function()                            oh no! i dont know what to write in message
+DEBUG    2021-10-10_17-28   example_class.cpp                         void CLASS_EXAMPLE::function(int, int, std::string)                     just test
+ERROR    2021-10-10_17-28   example_class.cpp                         void CLASS_EXAMPLE::function(int, int, std::string)                     😐
+VERBOSE  2021-10-10_17-28   example_class.cpp                         void CLASS_EXAMPLE::function(int, int, std::string)                     DEMO #2
+VERBOSE  2021-10-10_17-28   example_class.cpp                         void CLASS_EXAMPLE::function(int, int, std::string)                     lol
+VERBOSE  2021-10-10_17-28   example_class.cpp                         void CLASS_EXAMPLE::function(int, int, std::string)                     yeah
+FATAL    2021-10-10_17-28   example_class.cpp                         static int CLASS_EXAMPLE::another_function()                            oh no! i dont know what to write in message

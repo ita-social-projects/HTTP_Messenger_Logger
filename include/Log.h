@@ -36,13 +36,29 @@ const int BUFFER_FOR_MESSAGE = 60;
 
 /* colors for linux */
 
-#define RESET_COLOR   "\033[0m"
+#ifdef __linux__
+    #define RESET_COLOR         std::cout << "\033[0m"
 
-#define VERBOSE_COLOR   "\033[1m\033[36m" 
-#define FATAL_COLOR     "\033[29m\033[41m"    
-#define DEBUG_COLOR     "\033[1m\033[35m"    
-#define ERROR_COLOR     "\033[1m\033[31m"    
+    #define SET_VERBOSE_COLOR   std::cout << "\033[1m\033[36m" 
+    #define SET_FATAL_COLOR     std::cout << "\033[29m\033[41m"    
+    #define SET_DEBUG_COLOR     std::cout << "\033[1m\033[35m"    
+    #define SET_ERROR_COLOR     std::cout << "\033[1m\033[31m"    
+#elif _WIN32
+    #include <windows.h>
+    #define SET_ERROR_COLOR     SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_RED);
+    #define SET_FATAL_COLOR     SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 79);
+    #define SET_VERBOSE_COLOR   SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_GREEN | FOREGROUND_BLUE);
+    #define DEBUG_COLOR     SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 95);
 
+    #define RESET_COLOR         SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 15);
+#else
+    #define SET_VERBOSE_COLOR  
+    #define SET_FATAL_COLOR 
+    #define SET_DEBUG_COLOR   
+    #define SET_ERROR_COLOR     
+    
+    #define RESET_COLOR   
+#endif
 class Log{
 private:
     TYPE_OF_LOG m_type;
