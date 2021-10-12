@@ -4,7 +4,7 @@
 #include <QTableWidget>
 
 #include "BaseWindow.h"
-#include "../src/DeSerializer.h"
+#include "DeSerializer.h"
 
 #define AMOUNT_OF_COLS 5
 

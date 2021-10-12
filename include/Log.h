@@ -81,7 +81,7 @@ public:
     TYPE_OF_LOG GetType();
     std::string GetTime();
     std::string GetFile();
-    std::string GetMessage();
+    std::string GetLogMessage();
     std::string GetFunction();
 };
 

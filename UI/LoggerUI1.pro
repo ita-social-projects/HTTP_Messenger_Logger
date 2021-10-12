@@ -13,7 +13,7 @@ SOURCES += \
     main.cpp \
     mainwindow.cpp \
     welcomescreen.cpp \
-    ../src/DeSerializer.cpp \
+    DeSerializer.cpp \
     ../src/Log.cpp \
 
 HEADERS += \

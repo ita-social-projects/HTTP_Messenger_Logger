@@ -10,6 +10,16 @@ MainWindow::MainWindow(QString path_to_file, QWidget *parent)
     de = new DeSerializer(path_to_file.toStdString());
 
     SetTable();
+    ui->tableWidget->setEditTriggers(QAbstractItemView::NoEditTriggers);
+    QString styleSheet = "::section {"
+                         "spacing: 10px;"
+                         "background-color: black;"
+                         "color: white;"
+                         "border: 1px solid white;}";
+
+    ui->tableWidget->horizontalHeader()->setStyleSheet(styleSheet);
+    ui->tableWidget->verticalHeader()->setStyleSheet(styleSheet);
+    ui->tableWidget->setStyleSheet(styleSheet);
 }
 
 MainWindow::~MainWindow()
@@ -44,7 +54,7 @@ void MainWindow::SetTable(){
         ui->tableWidget->setItem(i, 2, itm3);
         QTableWidgetItem *itm4 = new QTableWidgetItem(QString::fromUtf8(logs.at(i).GetFunction().c_str()));
         ui->tableWidget->setItem(i, 3, itm4);
-        QTableWidgetItem *itm5 = new QTableWidgetItem(QString::fromUtf8(logs.at(i).GetMessage().c_str()));
+        QTableWidgetItem *itm5 = new QTableWidgetItem(QString::fromUtf8(logs.at(i).GetLogMessage().c_str()));
         ui->tableWidget->setItem(i, 4, itm5);
 
 

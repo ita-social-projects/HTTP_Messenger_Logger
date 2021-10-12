@@ -34,7 +34,13 @@ color: white;</string>
      </widget>
     </item>
     <item row="1" column="0" colspan="2">
-     <widget class="QTableWidget" name="tableWidget"/>
+     <widget class="QTableWidget" name="tableWidget">
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(56, 56, 56);
+color: black;
+QHeaderView::section { background-color:red }</string>
+      </property>
+     </widget>
     </item>
     <item row="0" column="0" colspan="2">
      <widget class="QLineEdit" name="lineEdit"/>
