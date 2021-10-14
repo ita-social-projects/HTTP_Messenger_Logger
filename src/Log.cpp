@@ -55,8 +55,7 @@
         }
 
         std::string Log::DeleteAllSpaces(std::string line){
-            std::string WHITESPACE = " \n\r\t\f\v";
-            size_t end = line.find_last_not_of(WHITESPACE);
+            size_t end = line.find_last_not_of(" \n\r\t\f\v");
             return (end == std::string::npos) ? "" : line.substr(0, end + 1);
         }
 

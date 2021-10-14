@@ -22,7 +22,7 @@ class DeSerializer{
         void ScanLines();
         void PushLogs();
         void CreateLogFromLine(std::string& line);
-        std::string GetNextProperty(std::string& line, int size_of_buffer_for_property);        
+        std::string GetNextProperty(std::string& line, size_t size_of_buffer_for_property);
         std::string DeleteAllSpacesFromEndOfLine(std::string line);
 
         void DeleteAllLines();
