@@ -36,15 +36,20 @@
             // getting the result from where its supposed to be
             std::string result = line.substr(0, size_of_buffer_for_property);
             // deleting this part from the line
-            line = line.substr(INDENT_SIZE + size_of_buffer_for_property, line.size());
+            if (size_of_buffer_for_property < line.size()){
+                line = line.substr(INDENT_SIZE + size_of_buffer_for_property, line.size());
+            }
+            else{
+                return line;
+            }
             result = DeleteAllSpacesFromEndOfLine(result);
             return result;
         }
 
         std::string DeSerializer::DeleteAllSpacesFromEndOfLine(std::string line){
-            line.erase(std::find_if(line.rbegin(), line.rend(),
-                    std::not1(std::ptr_fun<int, int>(std::isspace))).base(), line.end());
-            return line;
+            std::string WHITESPACE = " \n\r\t\f\v";
+            size_t end = line.find_last_not_of(WHITESPACE);
+            return (end == std::string::npos) ? "" : line.substr(0, end + 1);
         }
 
         std::vector<Log> DeSerializer::GetAllLogs(){

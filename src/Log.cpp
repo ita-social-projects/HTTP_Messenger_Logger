@@ -132,7 +132,7 @@
         std::string Log::GetFile(){
             return m_file;
         }
-        std::string Log::GetMessage(){
+        std::string Log::GetLogMessage(){
             return m_message;
         }
         std::string Log::GetFunction(){

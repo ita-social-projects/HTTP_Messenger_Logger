@@ -3,11 +3,6 @@
 #include <QDropEvent>
 #include <QMimeData>
 
-
-//#include <QException>
-//#include <string>
-//#include <QUrl>
-
 #include "BaseWindow.h"
 
 BaseWindow::BaseWindow(QWidget *parent)
