@@ -48,7 +48,7 @@ const int BUFFER_FOR_MESSAGE = 60;
     #define SET_ERROR_COLOR     SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_RED);
     #define SET_FATAL_COLOR     SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 79);
     #define SET_VERBOSE_COLOR   SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_GREEN | FOREGROUND_BLUE);
-    #define SET_DEBUG_COLOR         SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 95);
+    #define SET_DEBUG_COLOR     SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 95);
 
     #define RESET_COLOR         SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 15);
 #else

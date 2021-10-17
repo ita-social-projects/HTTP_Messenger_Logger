@@ -31,7 +31,7 @@ std::mutex Logger::m_mutex;
     }
 
     Logger::Logger(){
-        m_file_for_saving_logs = (std::string)("log_") + GetCurrentTime() + (".txt");
+        m_file_for_saving_logs = (std::string)("logs_") + GetCurrentTime() + (".txt");
     }
 
     Logger::~Logger(){
