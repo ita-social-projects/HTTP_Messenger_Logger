@@ -164,6 +164,7 @@ void MainWindow::on_tableWidget_itemClicked(QTableWidgetItem *item)
 
 void MainWindow::resizeEvent(QResizeEvent* event)
 {
+    event = nullptr;
     ui->tableWidget->horizontalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
     ui->tableWidget->horizontalHeader()->setStretchLastSection(true);
 }

@@ -32,7 +32,7 @@
             m_all_logs.push_back(Log(type, time, file, function, message));
         }
 
-        std::string DeSerializer::GetNextProperty(std::string& line, int size_of_buffer_for_property){
+        std::string DeSerializer::GetNextProperty(std::string& line, size_t size_of_buffer_for_property){
             // getting the result from where its supposed to be
             std::string result = line.substr(0, size_of_buffer_for_property);
             // deleting this part from the line
@@ -68,7 +68,7 @@
 
         void DeSerializer::DeleteAllLogs(){
             size_t amount_of_logs = m_all_logs.size();
-            for(int i=0; i<amount_of_logs; i++){
+            for(size_t i=0; i<amount_of_logs; i++){
                 m_all_logs.pop_back();
             }
             DeleteAllLines();
@@ -76,7 +76,7 @@
 
         void DeSerializer::DeleteAllLines(){
             size_t amount_of_lines = m_all_lines.size();
-            for(int i=0; i<amount_of_lines; i++){
+            for(size_t i=0; i<amount_of_lines; i++){
                 m_all_lines.pop_back();
             }
         }
