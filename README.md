@@ -6,10 +6,10 @@
 ### Install library 
 
 ```shell
-curl -L -o Logger.zip https://github.com/ita-social-projects/HTTP_Messenger_Logger/releases/download/beta/Logger.zip
+curl -L -o Logger.zip https://github.com/ita-social-projects/HTTP_Messenger_Logger/releases/tag/release/Logger.zip
 ```
 
-Or install manually <a href="https://github.com/ita-social-projects/HTTP_Messenger_Logger/releases/tag/beta"> here </a>
+Or install manually <a href="https://github.com/ita-social-projects/HTTP_Messenger_Logger/releases/tag/release"> here </a>
 
 ### Unzip library to your project
 
