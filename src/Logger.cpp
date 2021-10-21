@@ -40,6 +40,11 @@ std::mutex Logger::m_mutex;
 
     Logger& Logger::operator()(TYPE_OF_LOG type, std::string file, std::string function, std::string message){
         std::unique_lock<std::mutex> lock(m_mutex);
+        // remove new line chars
+        message.erase(std::remove_if(message.begin(), message.end(), 
+                        [&](char ch) 
+                        { return std::iscntrl(static_cast<unsigned char>(ch));}), 
+                        message.end());
         if(type >= m_level){
             Log log(type, GetCurrentTime(), file, function, message);
             if(show_logs_in_console){
