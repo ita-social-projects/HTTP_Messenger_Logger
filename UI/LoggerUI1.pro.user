@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<<<<<<< HEAD
-<!-- Written by QtCreator 5.0.0, 2021-10-13T01:25:08. -->
-=======
-<!-- Written by QtCreator 4.15.2, 2021-10-14T13:26:28. -->
->>>>>>> 769e63fe8d88f5d450528c9e9329fef5f54dfc49
+<!-- Written by QtCreator 4.15.2, 2021-10-18T00:57:13. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -96,27 +92,16 @@
   <variable>ProjectExplorer.Project.Target.0</variable>
   <valuemap type="QVariantMap">
    <value type="QString" key="DeviceType">Desktop</value>
-<<<<<<< HEAD
-   <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">Desktop Qt 6.0.4 MinGW 64-bit</value>
-   <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">Desktop Qt 6.0.4 MinGW 64-bit</value>
-   <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">qt.qt6.604.win64_mingw81_kit</value>
-=======
    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">Desktop Qt 6.0.2 GCC 64bit</value>
    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">Desktop Qt 6.0.2 GCC 64bit</value>
    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">qt.qt6.602.gcc_64_kit</value>
->>>>>>> 769e63fe8d88f5d450528c9e9329fef5f54dfc49
    <value type="int" key="ProjectExplorer.Target.ActiveBuildConfiguration">0</value>
    <value type="int" key="ProjectExplorer.Target.ActiveDeployConfiguration">0</value>
    <value type="int" key="ProjectExplorer.Target.ActiveRunConfiguration">0</value>
    <valuemap type="QVariantMap" key="ProjectExplorer.Target.BuildConfiguration.0">
     <value type="int" key="EnableQmlDebugging">0</value>
-<<<<<<< HEAD
-    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">C:\Users\andri\c++\HTTP_Messenger_Logger\build-LoggerUI1-Desktop_Qt_6_0_4_MinGW_64_bit-Debug</value>
-    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory.shadowDir">C:/Users/andri/c++/HTTP_Messenger_Logger/build-LoggerUI1-Desktop_Qt_6_0_4_MinGW_64_bit-Debug</value>
-=======
     <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">/home/andr/stuff/qt/build-LoggerUI1-Desktop_Qt_6_0_2_GCC_64bit-Debug</value>
     <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory.shadowDir">/home/andr/stuff/qt/build-LoggerUI1-Desktop_Qt_6_0_2_GCC_64bit-Debug</value>
->>>>>>> 769e63fe8d88f5d450528c9e9329fef5f54dfc49
     <valuemap type="QVariantMap" key="ProjectExplorer.BuildConfiguration.BuildStepList.0">
      <valuemap type="QVariantMap" key="ProjectExplorer.BuildStepList.Step.0">
       <value type="bool" key="ProjectExplorer.BuildStep.Enabled">true</value>
@@ -153,13 +138,8 @@
     <value type="int" key="Qt4ProjectManager.Qt4BuildConfiguration.BuildConfiguration">2</value>
    </valuemap>
    <valuemap type="QVariantMap" key="ProjectExplorer.Target.BuildConfiguration.1">
-<<<<<<< HEAD
-    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">C:\Users\andri\c++\HTTP_Messenger_Logger\build-LoggerUI1-Desktop_Qt_6_0_4_MinGW_64_bit-Release</value>
-    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory.shadowDir">C:/Users/andri/c++/HTTP_Messenger_Logger/build-LoggerUI1-Desktop_Qt_6_0_4_MinGW_64_bit-Release</value>
-=======
     <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">/home/andr/stuff/qt/build-LoggerUI1-Desktop_Qt_6_0_2_GCC_64bit-Release</value>
     <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory.shadowDir">/home/andr/stuff/qt/build-LoggerUI1-Desktop_Qt_6_0_2_GCC_64bit-Release</value>
->>>>>>> 769e63fe8d88f5d450528c9e9329fef5f54dfc49
     <valuemap type="QVariantMap" key="ProjectExplorer.BuildConfiguration.BuildStepList.0">
      <valuemap type="QVariantMap" key="ProjectExplorer.BuildStepList.Step.0">
       <value type="bool" key="ProjectExplorer.BuildStep.Enabled">true</value>
@@ -198,13 +178,8 @@
    </valuemap>
    <valuemap type="QVariantMap" key="ProjectExplorer.Target.BuildConfiguration.2">
     <value type="int" key="EnableQmlDebugging">0</value>
-<<<<<<< HEAD
-    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">C:\Users\andri\c++\HTTP_Messenger_Logger\build-LoggerUI1-Desktop_Qt_6_0_4_MinGW_64_bit-Profile</value>
-    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory.shadowDir">C:/Users/andri/c++/HTTP_Messenger_Logger/build-LoggerUI1-Desktop_Qt_6_0_4_MinGW_64_bit-Profile</value>
-=======
     <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">/home/andr/stuff/qt/build-LoggerUI1-Desktop_Qt_6_0_2_GCC_64bit-Profile</value>
     <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory.shadowDir">/home/andr/stuff/qt/build-LoggerUI1-Desktop_Qt_6_0_2_GCC_64bit-Profile</value>
->>>>>>> 769e63fe8d88f5d450528c9e9329fef5f54dfc49
     <valuemap type="QVariantMap" key="ProjectExplorer.BuildConfiguration.BuildStepList.0">
      <valuemap type="QVariantMap" key="ProjectExplorer.BuildStepList.Step.0">
       <value type="bool" key="ProjectExplorer.BuildStep.Enabled">true</value>
@@ -327,11 +302,7 @@
     <value type="bool" key="RunConfiguration.UseLibrarySearchPath">true</value>
     <value type="bool" key="RunConfiguration.UseQmlDebugger">false</value>
     <value type="bool" key="RunConfiguration.UseQmlDebuggerAuto">true</value>
-<<<<<<< HEAD
-    <value type="QString" key="RunConfiguration.WorkingDirectory.default">C:/Users/andri/c++/HTTP_Messenger_Logger/build-LoggerUI1-Desktop_Qt_6_0_4_MinGW_64_bit-Debug</value>
-=======
     <value type="QString" key="RunConfiguration.WorkingDirectory.default">/home/andr/stuff/qt/build-LoggerUI1-Desktop_Qt_6_0_2_GCC_64bit-Debug</value>
->>>>>>> 769e63fe8d88f5d450528c9e9329fef5f54dfc49
    </valuemap>
    <value type="int" key="ProjectExplorer.Target.RunConfigurationCount">1</value>
   </valuemap>
@@ -340,27 +311,16 @@
   <variable>ProjectExplorer.Project.Target.1</variable>
   <valuemap type="QVariantMap">
    <value type="QString" key="DeviceType">Desktop</value>
-<<<<<<< HEAD
-   <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">Desktop Qt 6.0.4 MSVC2019 64bit</value>
-   <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">Desktop Qt 6.0.4 MSVC2019 64bit</value>
-   <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">qt.qt6.604.win64_msvc2019_64_kit</value>
-=======
    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">Стаціонарний комп'ютер</value>
    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">Стаціонарний комп'ютер</value>
    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">{f91fb388-17a1-4fe1-a9cb-744b70f51f36}</value>
->>>>>>> 769e63fe8d88f5d450528c9e9329fef5f54dfc49
    <value type="int" key="ProjectExplorer.Target.ActiveBuildConfiguration">0</value>
    <value type="int" key="ProjectExplorer.Target.ActiveDeployConfiguration">0</value>
    <value type="int" key="ProjectExplorer.Target.ActiveRunConfiguration">0</value>
    <valuemap type="QVariantMap" key="ProjectExplorer.Target.BuildConfiguration.0">
     <value type="int" key="EnableQmlDebugging">0</value>
-<<<<<<< HEAD
-    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">C:\Users\andri\c++\HTTP_Messenger_Logger\build-LoggerUI1-Desktop_Qt_6_0_4_MSVC2019_64bit-Debug</value>
-    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory.shadowDir">C:/Users/andri/c++/HTTP_Messenger_Logger/build-LoggerUI1-Desktop_Qt_6_0_4_MSVC2019_64bit-Debug</value>
-=======
     <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">/home/andr/stuff/qt/build-LoggerUI1-unknown-Debug</value>
     <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory.shadowDir">/home/andr/stuff/qt/build-LoggerUI1-unknown-Debug</value>
->>>>>>> 769e63fe8d88f5d450528c9e9329fef5f54dfc49
     <valuemap type="QVariantMap" key="ProjectExplorer.BuildConfiguration.BuildStepList.0">
      <valuemap type="QVariantMap" key="ProjectExplorer.BuildStepList.Step.0">
       <value type="bool" key="ProjectExplorer.BuildStep.Enabled">true</value>
@@ -397,13 +357,8 @@
     <value type="int" key="Qt4ProjectManager.Qt4BuildConfiguration.BuildConfiguration">2</value>
    </valuemap>
    <valuemap type="QVariantMap" key="ProjectExplorer.Target.BuildConfiguration.1">
-<<<<<<< HEAD
-    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">C:\Users\andri\c++\HTTP_Messenger_Logger\build-LoggerUI1-Desktop_Qt_6_0_4_MSVC2019_64bit-Release</value>
-    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory.shadowDir">C:/Users/andri/c++/HTTP_Messenger_Logger/build-LoggerUI1-Desktop_Qt_6_0_4_MSVC2019_64bit-Release</value>
-=======
     <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">/home/andr/stuff/qt/build-LoggerUI1-unknown-Release</value>
     <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory.shadowDir">/home/andr/stuff/qt/build-LoggerUI1-unknown-Release</value>
->>>>>>> 769e63fe8d88f5d450528c9e9329fef5f54dfc49
     <valuemap type="QVariantMap" key="ProjectExplorer.BuildConfiguration.BuildStepList.0">
      <valuemap type="QVariantMap" key="ProjectExplorer.BuildStepList.Step.0">
       <value type="bool" key="ProjectExplorer.BuildStep.Enabled">true</value>
@@ -442,13 +397,8 @@
    </valuemap>
    <valuemap type="QVariantMap" key="ProjectExplorer.Target.BuildConfiguration.2">
     <value type="int" key="EnableQmlDebugging">0</value>
-<<<<<<< HEAD
-    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">C:\Users\andri\c++\HTTP_Messenger_Logger\build-LoggerUI1-Desktop_Qt_6_0_4_MSVC2019_64bit-Profile</value>
-    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory.shadowDir">C:/Users/andri/c++/HTTP_Messenger_Logger/build-LoggerUI1-Desktop_Qt_6_0_4_MSVC2019_64bit-Profile</value>
-=======
     <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">/home/andr/stuff/qt/build-LoggerUI1-unknown-Profile</value>
     <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory.shadowDir">/home/andr/stuff/qt/build-LoggerUI1-unknown-Profile</value>
->>>>>>> 769e63fe8d88f5d450528c9e9329fef5f54dfc49
     <valuemap type="QVariantMap" key="ProjectExplorer.BuildConfiguration.BuildStepList.0">
      <valuemap type="QVariantMap" key="ProjectExplorer.BuildStepList.Step.0">
       <value type="bool" key="ProjectExplorer.BuildStep.Enabled">true</value>

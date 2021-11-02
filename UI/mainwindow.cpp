@@ -45,16 +45,16 @@ void MainWindow::SetTable(){
     ui->tableWidget->horizontalHeader()->setSectionsClickable(true);
 
     for(size_t i=0; i<logs.size(); ++i){
-        QTableWidgetItem *itm1 = new QTableWidgetItem(QString::fromUtf8(Log::TypeToString(logs.at(i).GetType())));
+        QTableWidgetItem *itm1 = new QTableWidgetItem(QString::fromStdString(Log::TypeToString(logs.at(i).GetType())));
         ui->tableWidget->setItem(i, 0, itm1);
 
-        QTableWidgetItem *itm2 = new QTableWidgetItem(QString::fromUtf8(logs.at(i).GetTime().c_str()));
+        QTableWidgetItem *itm2 = new QTableWidgetItem(QString::fromStdString(logs.at(i).GetTime().c_str()));
         ui->tableWidget->setItem(i, 1, itm2);
-        QTableWidgetItem *itm3 = new QTableWidgetItem(QString::fromUtf8(logs.at(i).GetFile().c_str()));
+        QTableWidgetItem *itm3 = new QTableWidgetItem(QString::fromStdString(logs.at(i).GetFile().c_str()));
         ui->tableWidget->setItem(i, 2, itm3);
-        QTableWidgetItem *itm4 = new QTableWidgetItem(QString::fromUtf8(logs.at(i).GetFunction().c_str()));
+        QTableWidgetItem *itm4 = new QTableWidgetItem(QString::fromStdString(logs.at(i).GetFunction().c_str()));
         ui->tableWidget->setItem(i, 3, itm4);
-        QTableWidgetItem *itm5 = new QTableWidgetItem(QString::fromUtf8(logs.at(i).GetLogMessage().c_str()));
+        QTableWidgetItem *itm5 = new QTableWidgetItem(QString::fromStdString(logs.at(i).GetLogMessage().c_str()));
         ui->tableWidget->setItem(i, 4, itm5);
 
 
